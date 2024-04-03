@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Balmy';
+  src: url('/client/public/fonts/Balmy-Beta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bg-page {
+  background-image: url('../../public/main.png');
+  /* background-color: #000000; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shadow-outline-low {
+  text-shadow: 0 0 3px #000000, 0 0 3px #000000;
+}
+
+.shadow-outline {
+  text-shadow: 
+    -2.5px -2.5px 2px #001840,  2.5px -2.5px 2px #001840,
+    -2.5px  2.5px 2px #001840,  2.5px  2.5px 2px #001840,
+    0    -2.5px 0 #001840,  0    2.5px 0 #001840,
+    -2.5px  0   0 #001840,  2.5px  0   0 #001840,
+    -1px -2.5px 0 #001840,  1px -2.5px 0 #001840,
+    -2.5px -1px 0 #001840,  2.5px -1px 0 #001840,
+    -2.5px  1px 0 #001840,  2.5px  1px 0 #001840,
+    -1px  2.5px 0 #001840,  1px  2.5px 0 #001840;
+}
+
+@keyframes slideInRightToLeft {
+  from {
+    transform: translateX(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-navbar {
+  animation: slideInRightToLeft 0.5s ease forwards;
+}
+
+.animated-navbar-component {
+  animation: slideInRightToLeft 1s ease forwards;
+}

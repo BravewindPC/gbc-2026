@@ -81,17 +81,17 @@ export default function Page() {
             {isOpen && (
                 <div className=" ml-[9%] absolute mt-1 bg-white w-[70%] rounded-md shadow-lg z-10">
                     <ul className="py-1 text-gray-700">
-                        {options.map((option) => (
-                        <li
-                            key={option}
-                            className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition duration-300"
-                            onClick={() => {
-                            setSelectedOption(option);
-                            setIsOpen(false);
-                            }}
-                        >
-                            {option}
-                        </li>
+                    {options.map((option, index) => (
+                            <li
+                                key={`${option}-${index}`}
+                                className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition duration-300"
+                                onClick={() => {
+                                    setSelectedOption(option);
+                                    setIsOpen(false);
+                                }}
+                            >
+                                {option}
+                            </li>
                         ))}
                     </ul>
                 </div>

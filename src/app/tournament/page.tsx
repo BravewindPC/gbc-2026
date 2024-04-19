@@ -21,4 +21,4 @@ const Page = async () => {
         )
     }
 }
-export default page
+export default Page;

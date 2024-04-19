@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Socket, io } from "socket.io-client";
 
-const url = process.env.SOCKET_URL || "wss://gbc-ubt-socket-io.glitch.me/"
+const url = process.env.SOCKET_URL || "wss://dz4t8kjs-8000.asse.devtunnels.ms/"
 
 export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Match | null }) => {
     const [socket, setSocket] = useState<Socket | null>(null);
@@ -16,6 +16,8 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
     const [score2,setScore2] = useState<number[]>([0,0]);
     const [score3,setScore3] = useState<number[]>([0,0]);
     const allScores = [score1, score2, score3];
+
+    console.log(url)
 
     useEffect(() => {
         const socket = io(url);

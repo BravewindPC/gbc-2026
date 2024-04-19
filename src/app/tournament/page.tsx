@@ -2,7 +2,7 @@ import { authOptions } from "@/lib/auth"
 import { getServerSession } from "next-auth"
 import Tournament from "../components/tournament"
 
-const page = async () => {
+const Page = async () => {
 
     const session = await getServerSession(authOptions)
     console.log("ini",session)

@@ -101,7 +101,7 @@ export default function Page() {
                     <Bracket key={`bracket-${selectedOption}`} data={dataBracket}/>
                 </div>
             </div>
-            {dataGroup.map((item,index) => (<div className=" my-5 sm:my-20 overflow-auto w-[85%] mx-auto text-templateDarkBlue">
+            {dataGroup.map((item,index) => (<div key={`group-${index}`} className=" my-5 sm:my-20 overflow-auto w-[85%] mx-auto text-templateDarkBlue">
                 <div className="p-2 text-templateDarkBlue shadow-outline-reverse-low text-xl">Group {index+1}</div>
                 <div className=" flex items-center bg-inherit mx-auto overflow-x-auto hide-scrollbar">
                     <Table

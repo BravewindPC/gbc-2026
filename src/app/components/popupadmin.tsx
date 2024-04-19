@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Socket, io } from "socket.io-client";
 
-const url = process.env.SOCKET_URL || "https://dz4t8kjs-8080.asse.devtunnels.ms/"
+const url = process.env.SOCKET_URL || "wss://dz4t8kjs-8080.asse.devtunnels.ms/"
 
 export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Match | null }) => {
     const [socket, setSocket] = useState<Socket | null>(null);
@@ -34,8 +34,6 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                 console.log("Invalid index");
         }
     };
-
-    console.log(url)
 
     const handleIncrementScore = (setIdx: number, playerIdx: number) => {
         const updatedScores = [...allScores];

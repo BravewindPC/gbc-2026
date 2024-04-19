@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Socket, io } from "socket.io-client";
 
-const url = process.env.SOCKET_URL || "wss://dz4t8kjs-8000.asse.devtunnels.ms/"
+const url = process.env.SOCKET_URL || "https://dz4t8kjs-8080.asse.devtunnels.ms/"
 
 export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Match | null }) => {
     const [socket, setSocket] = useState<Socket | null>(null);

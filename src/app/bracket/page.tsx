@@ -98,13 +98,14 @@ export default function page() {
             )}
             <div className=" mt-5 sm:mt-20 overflow-auto hide-scrollbar w-[85%] mx-auto h-[700px] sm:h-[900px] text-templateDarkBlue">
                 <div className=" flex items-center bg-templateDarkBlue min-w-[900px] h-full mx-auto overflow-x-auto hide-scrollbar">
-                    <Bracket data={dataBracket}/>
+                    <Bracket key={99} data={dataBracket}/>
                 </div>
             </div>
             {dataGroup.map((item,index) => (<div className=" my-5 sm:my-20 overflow-auto w-[85%] mx-auto text-templateDarkBlue">
                 <div className="p-2 text-templateDarkBlue shadow-outline-reverse-low text-xl">Group {index+1}</div>
                 <div className=" flex items-center bg-inherit mx-auto overflow-x-auto hide-scrollbar">
                     <Table
+                        key={99}
                         type={
                             selectedOption === "Men's Singles" ? "MenSingle" :
                             selectedOption === "Men's Doubles" ? "MenDouble" :

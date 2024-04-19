@@ -2,41 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Balmy';
-  src: url('/client/public/fonts/Balmy-Beta.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Light';
-  src: url('/client/public/fonts/Montserrat-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Regular';
-  src: url('/client/public/fonts/Montserrat-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Bold';
-  src: url('/client/public/fonts/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Thin';
-  src: url('/client/public/fonts/Montserrat-Thin.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .bg-top {
   background-image: url('../../public/4.png');
   background-size: 100% auto;

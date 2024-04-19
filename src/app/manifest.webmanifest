@@ -1,0 +1,13 @@
+{
+    "name": "GBC UBT 2024",
+    "start_url": "http://localhost:3000/",
+    "display": "browser",
+    "description": "Ganesha Badminton Championship adalah sebuah kompetisi yang diselenggarakan oleh Unit Bulu Tangkis Institut Teknologi Bandung (UBT ITB). Ganesha Badminton Championship dilaksanakan setiap 2 tahun sekali secara bergantian dengan OLIM KM yang diselenggarakan oleh KM ITB. ",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "128x128",
+        "type": "image/x-icon"
+      }
+    ]
+  }

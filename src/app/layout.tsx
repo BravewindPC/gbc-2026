@@ -4,13 +4,31 @@ import "./globals.css";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 import Head from "next/head";
+import localFont from "next/font/local";
+import { cn } from "@/lib/utils";
 
+const balmy = localFont({
+  src: "./fonts/Balmy-Beta.ttf",
+  display:"swap",
+  variable:"--font-balmy",
+})
 
+const montserrat = localFont({
+  src: "./fonts/Montserrat-Regular.ttf",
+  display:"swap",
+  variable:"--font-montserrat",
+})
 
 export const metadata: Metadata = {
-  icons: "/Logo.png",
   title: "GBC UBT 2024",
-  description: "Ganesha Badminton Championship 2024",
+  keywords: [
+    "GBC UBT 2024",
+    "Ganesha Badminton Championsip",
+    "GBC",
+    "UBT",
+    "GBC 2024",
+  ],
+  manifest: "https://gbc-ubt-2024.vercel.app/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -19,10 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn(montserrat.variable, balmy.variable)}>
       <body>
         <Head>
-          <link rel="icon" href="/Logo.png" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <Navbar/>
           <div className="relative w-full min-h-screen bg-blueGray overflow-auto">

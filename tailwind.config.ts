@@ -48,8 +48,8 @@ const config: Config = {
         templateWhite: '#FFFDF0'
       },
       fontFamily: {
-        balmy: ['Balmy', 'sans-serif'],
-        monserrat:['Montserrat','sans-serif'],
+        balmy: "var(--font-balmy)",
+        monserrat: "var(--font-montserrat)",
       },
       screens: {
         'sm': '640px',

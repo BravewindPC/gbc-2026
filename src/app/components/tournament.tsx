@@ -192,11 +192,11 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                             </div>
                             <div className="flex w-full h-[98%] transition-transform duration-200 ease-in-out transform hover:scale-[103%]">
                                 <div className="flex flex-col flex-grow justify-center items-center w-[42%]">
-                                    {match.players1.split('/').map((player, playerIndex, playerArray) => (
-                                        <div key={playerIndex}>
-                                            {player.trim()}{playerIndex < playerArray.length - 1 ? ' /' : ''}
+                                    {/* {match.players1.split('/').map((player, playerIndex, playerArray) => ( */}
+                                        <div>
+                                            {match.players1}
                                         </div>
-                                    ))}
+                                    {/* // ))} */}
                                     <div>
                                         {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}
                                     </div>
@@ -231,11 +231,9 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                     </div>
                                 </div>
                                 <div className="flex flex-col flex-grow justify-center items-center w-[42%]">
-                                    {match.players2.split('/').map((player, playerIndex, playerArray) => (
-                                        <div key={playerIndex}>
-                                            {player.trim()}{playerIndex < playerArray.length - 1 ? ' /' : ''}
+                                        <div>
+                                            {match.players2}
                                         </div>
-                                    ))}
                                     <div>
                                         {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
                                     </div>

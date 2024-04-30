@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-colorr{
+  background-color: #96B2DB;
+  z-index: -50;
+}
+
 .bg-top {
   background-image: url('../../public/4.png');
   background-size: 100% auto;
   background-position:top;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: -30;
 }
 
 .bg-cloud {
@@ -15,7 +20,7 @@
   background-size: 100% auto;
   background-position:bottom;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: -30;
 }
 
 .bg-star {
@@ -23,7 +28,7 @@
   background-size: contain;
   background-position:top;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: -20;
 }
 
 @media (max-width: 640px) {
@@ -36,6 +41,7 @@
   background-image: url('../../public/5.png');
   background-size: 150% auto;
   background-position-y: 0px;
+  z-index: -40;
 }
 
 .bg-blur2 {
@@ -44,6 +50,7 @@
   transform: scaleX(-1);
   background-position-y: 120px;
   background-position-x: 0px;
+  z-index: -40;
 }
 
 .text-shadow {

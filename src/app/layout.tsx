@@ -43,7 +43,8 @@ export default function RootLayout({
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Navbar/>
-          <div className="relative w-full min-h-screen bg-blueGray overflow-auto">
+          <div className="relative w-full min-h-screen overflow-auto">
+          <div className="absolute bg-colorr w-full h-full"></div>
             <span className="relative z-10">{children}</span>
             <div className="absolute w-full h-full bottom-0 bg-top"></div>
             <div className="absolute w-full h-full bottom-0 aspect-[1/2] bg-cloud"></div>

@@ -109,7 +109,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                                 </div>
                             ))}
                             <div>
-                                {"("+match.organization1+")"}
+                            {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}
                             </div>
                         </div>
                         <div className="font-balmy">
@@ -122,7 +122,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                                 </div>
                             ))}
                             <div>
-                                {"("+match.organization2+")"}
+                            {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
                             </div>
                         </div>
                     </div>

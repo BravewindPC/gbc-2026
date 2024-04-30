@@ -5,7 +5,6 @@ import Tournament from "../components/tournament"
 const Page = async () => {
 
     const session = await getServerSession(authOptions)
-    console.log("ini",session)
 
     if (session?.user) {
         return(

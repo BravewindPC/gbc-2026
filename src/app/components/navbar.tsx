@@ -49,8 +49,8 @@ export const Navbar = () => {
                     <Link href="/bracket">
                         <div className={linkClass('/bracket')}>Bracket</div>
                     </Link>
-                    <Link href="/about-us">
-                        <div className={linkClass('/about-us')}>About Us</div>
+                    <Link href="/documentation">
+                        <div className={linkClass('/documentation')}>Documentation</div>
                     </Link>
                 </div>
             </div>
@@ -78,8 +78,8 @@ export const Navbar = () => {
                     <Link href="/bracket" className="z-10">
                         <div className={linkClass('/bracket')}>Bracket</div>
                     </Link>
-                    <Link href="/about-us" className="z-10">
-                        <div className={linkClass('/about-us')}>About Us</div>
+                    <Link href="/documentation" className="z-10">
+                        <div className={linkClass('/documentation')}>Documentation</div>
                     </Link>
                     <div className="mt-12 z-10 ">
                         <Image src="/UBT_White.png" className="animated-navbar-component" width={150} height={150} alt="logo-UBT" objectFit="contain"/>

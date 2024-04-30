@@ -20,7 +20,7 @@ export default function Home() {
                 <div className="mt-4 sm:mt-14 lg:mt-18 text-[10px] custom:text-lg md:text-2xl font-balmy text-templateWhite thick-shadow">
                     About GBC
                 </div>
-                <div className=" mt-2 sm:mt-4 lg:mt-8 w-[80%] font-monserrat text-[6px] custom:text-sm md:text-base text-templateWhite text-center">
+                <div className=" mt-2 sm:mt-4 lg:mt-8 w-[80%] max-w-[750px] font-monserrat text-[6px] custom:text-sm md:text-base text-templateWhite text-center">
                     Ganesha Badminton Championship adalah sebuah kompetisi yang diselenggarakan oleh 
                     Unit Bulu Tangkis Institut Teknologi Bandung (UBT ITB). 
                     Ganesha Badminton Championship dilaksanakan 

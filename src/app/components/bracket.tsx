@@ -1,4 +1,4 @@
-import { Match, Round } from "@/lib/type";
+import { Match, Organization, Round } from "@/lib/type";
 import { useEffect, useState } from "react";
 
 interface BracketProps {
@@ -20,7 +20,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
         setFinals(finalMatches);
     }, [data]);
 
-    // console.log(quarterfinals,semifinals,finals)
+    console.log(quarterfinals,semifinals,finals)
     
     return (
         <div className=" ml-10 mr-10 flex h-[600px] justify-center">
@@ -33,46 +33,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                         <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                             {/* Match 7 */}
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                     {(() => {
                                         const match = quarterfinals.find(match => match.number === 7);
-                                        if (match && match.players1) {
-                                            return match.players1;
+                                        if (match && match.organization1) {
+                                            return Organization[match.organization1 as keyof typeof Organization];
                                         } else {
                                             return "N/A";
                                         }
                                     })()}
                                 </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[0] ?? 0}
-                                </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[1] ?? 0}
-                                </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[2] ?? 0}
-                                </div>
+                                {(() => {
+                                    const match = quarterfinals.find(match => match.number === 7);
+                                    if (match?.score1 && match.score1.length > 0) {
+                                        return (
+                                            <>
+                                                {match.score1.length >= 1 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score1[0] ?? 0}
+                                                    </div>
+                                                )}
+                                                {match.score1.length >= 2 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score1[1] ?? 0}
+                                                    </div>
+                                                )}
+                                                {match.score1.length >= 3 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score1[2] ?? 0}
+                                                    </div>
+                                                )}
+                                            </>
+                                        );
+                                
+                                    } else {
+                                        return null;
+                                    }
+                                })()}
                             </div>
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                     {(() => {
                                         const match = quarterfinals.find(match => match.number === 7);
-                                        if (match && match.players2) {
-                                            return match.players2;
+                                        if (match && match.organization2) {
+                                            return Organization[match.organization2 as keyof typeof Organization];
                                         } else {
                                             return "N/A";
                                         }
                                     })()}
                                 </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[0] ?? 0}
-                                </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[1] ?? 0}
-                                </div>
-                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                    {quarterfinals.find(match => match.number === 7)?.score1?.[2] ?? 0}
-                                </div>
+                                {(() => {
+                                    const match = quarterfinals.find(match => match.number === 7);
+                                    if (match?.score2 && match.score2.length > 0) {
+                                        return (
+                                            <>
+                                                {match.score2.length >= 1 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score2[0] ?? 0}
+                                                    </div>
+                                                )}
+                                                {match.score2.length >= 2 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score2[1] ?? 0}
+                                                    </div>
+                                                )}
+                                                {match.score2.length >= 3 && (
+                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                        {match.score2[2] ?? 0}
+                                                    </div>
+                                                )}
+                                            </>
+                                        );
+                                
+                                    } else {
+                                        return null;
+                                    }
+                                })()}
                             </div>
                         </div>
                     </div>
@@ -86,46 +122,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                     {/* Match 5 */}
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 7);
-                                                                if (match && match.players1) {
-                                                                    return match.players1;
+                                                                const match = quarterfinals.find(match => match.number === 5);
+                                                                if (match && match.organization1) {
+                                                                    return Organization[match.organization1 as keyof typeof Organization];
                                                                 } else {
                                                                     return "N/A";
                                                                 }
                                                             })()}
                                                         </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score1?.[0] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score1?.[1] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score1?.[2] ?? 0}
-                                                        </div>
+                                                        {(() => {
+                                                            const match = quarterfinals.find(match => match.number === 5);
+                                                            if (match?.score1 && match.score1.length > 0) {
+                                                                return (
+                                                                    <>
+                                                                        {match.score1.length >= 1 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[0] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score1.length >= 2 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[1] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score1.length >= 3 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[2] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                    </>
+                                                                );
+                                                        
+                                                            } else {
+                                                                return null;
+                                                            }
+                                                        })()}
                                                     </div>
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 7);
-                                                                if (match && match.players2) {
-                                                                    return match.players2;
+                                                                const match = quarterfinals.find(match => match.number === 5);
+                                                                if (match && match.organization2) {
+                                                                    return Organization[match.organization2 as keyof typeof Organization];
                                                                 } else {
                                                                     return "N/A";
                                                                 }
                                                             })()}
                                                         </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score2?.[0] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score2?.[1] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 5)?.score2?.[2] ?? 0}
-                                                        </div>
+                                                        {(() => {
+                                                            const match = quarterfinals.find(match => match.number === 5);
+                                                            if (match?.score2 && match.score2.length > 0) {
+                                                                return (
+                                                                    <>
+                                                                        {match.score2.length >= 1 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[0] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score2.length >= 2 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[1] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score2.length >= 3 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[2] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                    </>
+                                                                );
+                                                        
+                                                            } else {
+                                                                return null;
+                                                            }
+                                                        })()}
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,46 +206,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 1 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players1) {
-                                                                        return match.players1;
+                                                                    const match = quarterfinals.find(match => match.number === 1);
+                                                                    if (match && match.organization1) {
+                                                                        return Organization[match.organization1 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score1?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score1?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score1?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 1);
+                                                                if (match?.score1 && match.score1.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score1.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players2) {
-                                                                        return match.players2;
+                                                                    const match = quarterfinals.find(match => match.number === 1);
+                                                                    if (match && match.organization2) {
+                                                                        return Organization[match.organization2 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score2?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score2?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 1)?.score2?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 1);
+                                                                if (match?.score2 && match.score2.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score2.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -181,46 +289,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 2 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players1) {
-                                                                        return match.players1;
+                                                                    const match = quarterfinals.find(match => match.number === 2);
+                                                                    if (match && match.organization1) {
+                                                                        return Organization[match.organization1 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score1?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score1?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score1?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 2);
+                                                                if (match?.score1 && match.score1.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score1.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players2) {
-                                                                        return match.players2;
+                                                                    const match = quarterfinals.find(match => match.number === 2);
+                                                                    if (match && match.organization2) {
+                                                                        return Organization[match.organization2 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score2?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score2?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 2)?.score2?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 2);
+                                                                if (match?.score2 && match.score2.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score2.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -239,46 +383,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                     {/* Match 6 */}
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 7);
-                                                                if (match && match.players1) {
-                                                                    return match.players1;
+                                                                const match = quarterfinals.find(match => match.number === 6);
+                                                                if (match && match.organization1) {
+                                                                    return Organization[match.organization1 as keyof typeof Organization];
                                                                 } else {
                                                                     return "N/A";
                                                                 }
                                                             })()}
                                                         </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score1?.[0] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score1?.[1] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score1?.[2] ?? 0}
-                                                        </div>
+                                                        {(() => {
+                                                            const match = quarterfinals.find(match => match.number === 6);
+                                                            if (match?.score1 && match.score1.length > 0) {
+                                                                return (
+                                                                    <>
+                                                                        {match.score1.length >= 1 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[0] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score1.length >= 2 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[1] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score1.length >= 3 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score1[2] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                    </>
+                                                                );
+                                                        
+                                                            } else {
+                                                                return null;
+                                                            }
+                                                        })()}
                                                     </div>
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 7);
-                                                                if (match && match.players2) {
-                                                                    return match.players2;
+                                                                const match = quarterfinals.find(match => match.number === 6);
+                                                                if (match && match.organization2) {
+                                                                    return Organization[match.organization2 as keyof typeof Organization];
                                                                 } else {
                                                                     return "N/A";
                                                                 }
                                                             })()}
                                                         </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score2?.[0] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score2?.[1] ?? 0}
-                                                        </div>
-                                                        <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                            {quarterfinals.find(match => match.number === 6)?.score2?.[2] ?? 0}
-                                                        </div>
+                                                        {(() => {
+                                                            const match = quarterfinals.find(match => match.number === 6);
+                                                            if (match?.score2 && match.score2.length > 0) {
+                                                                return (
+                                                                    <>
+                                                                        {match.score2.length >= 1 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[0] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score2.length >= 2 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[1] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                        {match.score2.length >= 3 && (
+                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                {match.score2[2] ?? 0}
+                                                                            </div>
+                                                                        )}
+                                                                    </>
+                                                                );
+                                                        
+                                                            } else {
+                                                                return null;
+                                                            }
+                                                        })()}
                                                     </div>
                                                 </div>
                                                 </div>
@@ -287,46 +467,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 3 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players1) {
-                                                                        return match.players1;
+                                                                    const match = quarterfinals.find(match => match.number === 3);
+                                                                    if (match && match.organization1) {
+                                                                        return Organization[match.organization1 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score1?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score1?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score1?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 3);
+                                                                if (match?.score1 && match.score1.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score1.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players2) {
-                                                                        return match.players2;
+                                                                    const match = quarterfinals.find(match => match.number === 3);
+                                                                    if (match && match.organization2) {
+                                                                        return Organization[match.organization2 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score2?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score2?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 3)?.score2?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 3);
+                                                                if (match?.score2 && match.score2.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score2.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -334,46 +550,82 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 4 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players1) {
-                                                                        return match.players1;
+                                                                    const match = quarterfinals.find(match => match.number === 3);
+                                                                    if (match && match.organization1) {
+                                                                        return Organization[match.organization1 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score1?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score1?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score1?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 4);
+                                                                if (match?.score1 && match.score1.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score1.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score1.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score1[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue">
+                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                                 {(() => {
-                                                                    const match = quarterfinals.find(match => match.number === 7);
-                                                                    if (match && match.players2) {
-                                                                        return match.players2;
+                                                                    const match = quarterfinals.find(match => match.number === 3);
+                                                                    if (match && match.organization2) {
+                                                                        return Organization[match.organization2 as keyof typeof Organization];
                                                                     } else {
                                                                         return "N/A";
                                                                     }
                                                                 })()}
                                                             </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score2?.[0] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score2?.[1] ?? 0}
-                                                            </div>
-                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
-                                                                {quarterfinals.find(match => match.number === 4)?.score2?.[2] ?? 0}
-                                                            </div>
+                                                            {(() => {
+                                                                const match = quarterfinals.find(match => match.number === 4);
+                                                                if (match?.score2 && match.score2.length > 0) {
+                                                                    return (
+                                                                        <>
+                                                                            {match.score2.length >= 1 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[0] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 2 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[1] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                            {match.score2.length >= 3 && (
+                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                    {match.score2[2] ?? 0}
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    );
+                                                            
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 </div>

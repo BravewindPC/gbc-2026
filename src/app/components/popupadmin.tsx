@@ -318,7 +318,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                 </div>
                             ))}
                             <div>
-                                {"("+match.organization1+")"}
+                            {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}
                             </div>
                         </div>
                         <div className="font-balmy">
@@ -331,7 +331,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                 </div>
                             ))}
                             <div>
-                                {"("+match.organization2+")"}
+                            {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
                             </div>
                         </div>
                     </div>
@@ -417,10 +417,10 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                 >
                                     <option value="" disabled>Select winner</option>
                                     {match.organization1 && (
-                                        <option value={match.organization1}>{match.organization1}</option>
+                                        <option value={match.organization1}>{"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}</option>
                                     )}
                                     {match.organization2 && (
-                                        <option value={match.organization2}>{match.organization2}</option>
+                                        <option value={match.organization2}>{"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}</option>
                                     )}
                                 </select>
                             </div>

@@ -45,7 +45,7 @@ export default function RootLayout({
         <Navbar/>
           <div className="relative w-full min-h-screen overflow-auto">
           <div className="absolute bg-colorr w-full h-full"></div>
-            <span className="relative z-10">{children}</span>
+            <span className="relative">{children}</span>
             <div className="absolute w-full h-full bottom-0 bg-top"></div>
             <div className="absolute w-full h-full bottom-0 aspect-[1/2] bg-cloud"></div>
             <div className="absolute w-full h-full bottom-0 bg-star"></div>

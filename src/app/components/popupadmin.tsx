@@ -358,6 +358,73 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                         </div>
                     </div>
                     
+
+                    <div className=" "></div>
+                    {
+                        allScores.map((score, index) => (
+                            <div key={index} className="mt-2 sm:mt-4 flex justify-center gap-4 items-center">
+                                <div className="flex items-center">
+                                    {gameStarted && 
+                                        <button 
+                                            onClick={() => handleDecrementScore(index, 0)} 
+                                            className="px-[5px] custom:px-[10px] text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
+                                        >
+                                            -
+                                        </button>
+                                    }
+                                    <div
+                                        className={`px-1 custom:px-2 mx-2 text-[6px] custom:text-xs sm:text-[16px] ${
+                                            (score[0] >= 21) && Math.abs(score[0] - score[1]) >= 2
+                                            ? (score[0] > score[1] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
+                                            : ''
+                                        }`}
+                                    >
+                                        {score[0]}
+                                    </div>
+                                    {gameStarted && 
+                                        <button 
+                                            onClick={() => handleIncrementScore(index, 0)} 
+                                            className="px-[4px] custom:px-2 text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
+                                        >
+                                            +
+                                        </button>
+                                    }
+                                </div>
+
+                                <div className="text-[6px] custom:text-xs sm:text-[16px]">
+                                    Game {index + 1}
+                                </div>
+
+                                <div className="flex items-center">
+                                    {gameStarted && 
+                                        <button 
+                                            onClick={() => handleDecrementScore(index, 1)} 
+                                            className="px-[5px] custom:px-[10px] text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
+                                        >
+                                            -
+                                        </button>
+                                    }
+                                    <div
+                                        className={`px-1 custom:px-2 mx-2 text-[6px] custom:text-xs sm:text-[16px] ${
+                                            (score[1] >= 21) && Math.abs(score[0] - score[1]) >= 2
+                                            ? (score[1] > score[0] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
+                                            : ''
+                                        }`}
+                                    >
+                                        {score[1]}
+                                    </div>
+                                    {gameStarted && 
+                                        <button 
+                                            onClick={() => handleIncrementScore(index, 1)} 
+                                            className="px-[4px] custom:px-2 text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
+                                        >
+                                            +
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        ))
+                    }
                     {gameStarted &&
                         <div className="flex justify-center">
                             <button
@@ -464,73 +531,6 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                 Swap
                             </button>
                         </div>
-
-                    <div className=" "></div>
-                    {
-                        allScores.map((score, index) => (
-                            <div key={index} className="mt-2 sm:mt-4 flex justify-center gap-4 items-center">
-                                <div className="flex items-center">
-                                    {gameStarted && 
-                                        <button 
-                                            onClick={() => handleDecrementScore(index, 0)} 
-                                            className="px-[5px] custom:px-[10px] text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
-                                        >
-                                            -
-                                        </button>
-                                    }
-                                    <div
-                                        className={`px-1 custom:px-2 mx-2 text-[6px] custom:text-xs sm:text-[16px] ${
-                                            (score[0] >= 21) && Math.abs(score[0] - score[1]) >= 2
-                                            ? (score[0] > score[1] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
-                                            : ''
-                                        }`}
-                                    >
-                                        {score[0]}
-                                    </div>
-                                    {gameStarted && 
-                                        <button 
-                                            onClick={() => handleIncrementScore(index, 0)} 
-                                            className="px-[4px] custom:px-2 text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
-                                        >
-                                            +
-                                        </button>
-                                    }
-                                </div>
-
-                                <div className="text-[6px] custom:text-xs sm:text-[16px]">
-                                    Game {index + 1}
-                                </div>
-
-                                <div className="flex items-center">
-                                    {gameStarted && 
-                                        <button 
-                                            onClick={() => handleDecrementScore(index, 1)} 
-                                            className="px-[5px] custom:px-[10px] text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
-                                        >
-                                            -
-                                        </button>
-                                    }
-                                    <div
-                                        className={`px-1 custom:px-2 mx-2 text-[6px] custom:text-xs sm:text-[16px] ${
-                                            (score[1] >= 21) && Math.abs(score[0] - score[1]) >= 2
-                                            ? (score[1] > score[0] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
-                                            : ''
-                                        }`}
-                                    >
-                                        {score[1]}
-                                    </div>
-                                    {gameStarted && 
-                                        <button 
-                                            onClick={() => handleIncrementScore(index, 1)} 
-                                            className="px-[4px] custom:px-2 text-xs custom:text-lg sm:text-xl font-bold border border-templatePaleYellow bg-templatePaleYellow text-templateDarkBlue hover:bg-templateDarkBlue hover:text-templatePaleYellow rounded"
-                                        >
-                                            +
-                                        </button>
-                                    }
-                                </div>
-                            </div>
-                        ))
-                    }
                     
 
                     <div className=" flex flex-col items-center">

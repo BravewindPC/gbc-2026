@@ -56,7 +56,7 @@ const config: Config = {
         'md': '800px',
         'lg': '1024px',
         'xl': '1280px',
-        'custom': '375px',
+        'custom': '390px',
       }
     },
   },

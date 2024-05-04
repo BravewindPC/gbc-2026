@@ -371,7 +371,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                         <div className={gameStarted ? "w-full mt-1 custom:mt-2 flex justify-center items-center gap-1" : "hidden"}>
                             <button
                                 onClick={handleSwapFalse}
-                                className="mt-1 -rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
+                                className="mt-1 -rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-[10px] sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
                             >
                                 Swap
                             </button>
@@ -459,7 +459,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                             </div>
                             <button
                                 onClick={handleSwapTrue}
-                                className="mt-1 rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
+                                className="mt-1 rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-[10px] sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
                             >
                                 Swap
                             </button>

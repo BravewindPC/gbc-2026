@@ -54,221 +54,6 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
             scoresCopy[playerIdx] += 1;
             const otherPlayerScore = scoresCopy[1 - playerIdx];
             const diff = Math.abs(scoresCopy[playerIdx] - otherPlayerScore);
-
-            if (setIdx%2==0) {
-                if (setIdx===0) {
-                    if (playerIdx==0) {
-                        if (!currentserve) {
-                            if (activeServe===2) {
-                                if (score1[0]%2==0) {
-                                    setActiveServe(1);
-                                    let temp = selectedOption1;
-                                    setSelectedOption1(selectedOption2);
-                                    setSelectedOption2(temp);
-                                }
-                            } else if (activeServe===1) {
-                                if (score1[0]%2!=0) {
-                                    setActiveServe(2);
-                                    let temp = selectedOption1;
-                                    setSelectedOption1(selectedOption2);
-                                    setSelectedOption2(temp);
-                                }
-                            }
-                        } else {
-                            if (score1[0]%2==0) {
-                                setActiveServe(1);
-                            } else {
-                                setActiveServe(2);
-                            }
-                            setCurrentServe(false);
-                        }
-                    } else {
-                        if (currentserve) {
-                            if (activeServe===3) {
-                                if (score1[1]%2==0) {
-                                    setActiveServe(4);
-                                    let temp = selectedOption3;
-                                    setSelectedOption3(selectedOption4);
-                                    setSelectedOption4(temp);
-                                }
-                            } else if (activeServe===4) {
-                                if (score1[1]%2!=0) {
-                                    setActiveServe(3);
-                                    let temp = selectedOption3;
-                                    setSelectedOption3(selectedOption4);
-                                    setSelectedOption4(temp);
-                                }
-                            }
-                        } else {
-                            if (score1[1]%2==0) {
-                                setActiveServe(4);
-                            } else {
-                                setActiveServe(3);
-                            }
-                            setCurrentServe(true);
-                        }
-                    }
-                } else {
-                    if (score3[0]<=10 && score3[1]<=10) {
-                        if (playerIdx==0) {
-                            if (!currentserve) {
-                                if (activeServe===2) {
-                                    if (score3[0]%2==0) {
-                                        setActiveServe(1);
-                                        let temp = selectedOption1;
-                                        setSelectedOption1(selectedOption2);
-                                        setSelectedOption2(temp);
-                                    }
-                                } else if (activeServe===1) {
-                                    if (score3[0]%2!=0) {
-                                        setActiveServe(2);
-                                        let temp = selectedOption1;
-                                        setSelectedOption1(selectedOption2);
-                                        setSelectedOption2(temp);
-                                    }
-                                }
-                            } else {
-                                if (score3[0]%2==0) {
-                                    setActiveServe(1);
-                                } else {
-                                    setActiveServe(2);
-                                }
-                                setCurrentServe(false);
-                            }
-                        } else {
-                            if (currentserve) {
-                                if (activeServe===3) {
-                                    if (score3[1]%2==0) {
-                                        setActiveServe(4);
-                                        let temp = selectedOption3;
-                                        setSelectedOption3(selectedOption4);
-                                        setSelectedOption4(temp);
-                                    }
-                                } else if (activeServe===4) {
-                                    if (score3[1]%2!=0) {
-                                        setActiveServe(3);
-                                        let temp = selectedOption3;
-                                        setSelectedOption3(selectedOption4);
-                                        setSelectedOption4(temp);
-                                    }
-                                }
-                            } else {
-                                if (score3[1]%2==0) {
-                                    setActiveServe(4);
-                                } else {
-                                    setActiveServe(3);
-                                }
-                                setCurrentServe(true);
-                            }
-                        }
-                    } else {
-                        if (playerIdx==1) {
-                            if (!currentserve) {
-                                if (activeServe===2) {
-                                    if (score3[1]%2==0) {
-                                        setActiveServe(1);
-                                        let temp = selectedOption1;
-                                        setSelectedOption1(selectedOption2);
-                                        setSelectedOption2(temp);
-                                    }
-                                } else if (activeServe===1) {
-                                    if (score3[1]%2!=0) {
-                                        setActiveServe(2);
-                                        let temp = selectedOption1;
-                                        setSelectedOption1(selectedOption2);
-                                        setSelectedOption2(temp);
-                                    }
-                                }
-                            } else {
-                                if (score3[1]%2==0) {
-                                    setActiveServe(1);
-                                } else {
-                                    setActiveServe(2);
-                                }
-                                setCurrentServe(false);
-                            }
-                        } else {
-                            if (currentserve) {
-                                if (activeServe===3) {
-                                    if (score3[0]%2==0) {
-                                        setActiveServe(4);
-                                        let temp = selectedOption3;
-                                        setSelectedOption3(selectedOption4);
-                                        setSelectedOption4(temp);
-                                    }
-                                } else if (activeServe===4) {
-                                    if (score3[0]%2!=0) {
-                                        setActiveServe(3);
-                                        let temp = selectedOption3;
-                                        setSelectedOption3(selectedOption4);
-                                        setSelectedOption4(temp);
-                                    }
-                                }
-                            } else {
-                                if (score3[0]%2==0) {
-                                    setActiveServe(4);
-                                } else {
-                                    setActiveServe(3);
-                                }
-                                setCurrentServe(true);
-                            }
-                        }
-                    }
-                } 
-            } else {
-                if (playerIdx==1) {
-                    if (!currentserve) {
-                        if (activeServe===2) {
-                            if (score2[1]%2==0) {
-                                setActiveServe(1);
-                                let temp = selectedOption1;
-                                setSelectedOption1(selectedOption2);
-                                setSelectedOption2(temp);
-                            }
-                        } else if (activeServe===1) {
-                            if (score2[1]%2!=0) {
-                                setActiveServe(2);
-                                let temp = selectedOption1;
-                                setSelectedOption1(selectedOption2);
-                                setSelectedOption2(temp);
-                            }
-                        }
-                    } else {
-                        if (score2[1]%2==0) {
-                            setActiveServe(1);
-                        } else {
-                            setActiveServe(2);
-                        }
-                        setCurrentServe(false);
-                    }
-                } else {
-                    if (currentserve) {
-                        if (activeServe===3) {
-                            if (score2[0]%2==0) {
-                                setActiveServe(4);
-                                let temp = selectedOption3;
-                                setSelectedOption3(selectedOption4);
-                                setSelectedOption4(temp);
-                            }
-                        } else if (activeServe===4) {
-                            if (score2[0]%2!=0) {
-                                setActiveServe(3);
-                                let temp = selectedOption3;
-                                setSelectedOption3(selectedOption4);
-                                setSelectedOption4(temp);
-                            }
-                        }
-                    } else {
-                        if (score2[0]%2==0) {
-                            setActiveServe(4);
-                        } else {
-                            setActiveServe(3);
-                        }
-                        setCurrentServe(true);
-                    }
-                }
-            }
-    
             if (scoresCopy[playerIdx] <= 21 || diff <= 2) {
                 setScoresBasedOnIndex(setIdx, scoresCopy);
                 socket?.emit("update-score", { idx: setIdx, newScore: scoresCopy }, match?.id);
@@ -484,40 +269,25 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
         };
     }, []);
 
+    const handleSwapFalse = () => {
+        let temp=selectedOption1;
+        setSelectedOption1(selectedOption2);
+        setSelectedOption2(temp);
+    };
+
+    const handleSwapTrue = () => {
+        let temp=selectedOption3;
+        setSelectedOption3(selectedOption4);
+        setSelectedOption4(temp);
+    };
+
     const handleSwap = () => {
-        if (activeServe===1) {
-            let temp=selectedOption1;
-            let temp2=selectedOption2;
-            setSelectedOption1(selectedOption3);
-            setSelectedOption2(selectedOption4);
-            setSelectedOption3(temp);
-            setSelectedOption4(temp2);
-            setActiveServe(3);
-        } else if (activeServe===2) {
-            let temp=selectedOption1;
-            let temp2=selectedOption2;
-            setSelectedOption1(selectedOption4);
-            setSelectedOption2(selectedOption3);
-            setSelectedOption3(temp2);
-            setSelectedOption4(temp);
-            setActiveServe(3);
-        } else if (activeServe===3) {
-            let temp=selectedOption1;
-            let temp2=selectedOption2;
-            setSelectedOption1(selectedOption4);
-            setSelectedOption2(selectedOption3);
-            setSelectedOption3(temp2);
-            setSelectedOption4(temp);
-            setActiveServe(2);
-        } else if (activeServe===4) {
-            let temp=selectedOption1;
-            let temp2=selectedOption2;
-            setSelectedOption1(selectedOption3);
-            setSelectedOption2(selectedOption4);
-            setSelectedOption3(temp);
-            setSelectedOption4(temp2);
-            setActiveServe(2);
-        }
+        let temp=selectedOption1;
+        let temp2=selectedOption2;
+        setSelectedOption1(selectedOption4);
+        setSelectedOption2(selectedOption3);
+        setSelectedOption3(temp2);
+        setSelectedOption4(temp);
     };
 
     return(
@@ -588,8 +358,114 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                         </div>
                     </div>
                     
+                    {gameStarted &&
+                        <div className="flex justify-center">
+                            <button
+                                onClick={handleSwap}
+                                className="mt-1 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
+                            >
+                                Swap Court
+                            </button>
+                        </div>
+                    }
+                        <div className={gameStarted ? "w-full mt-1 custom:mt-2 flex justify-center items-center gap-1" : "hidden"}>
+                            <button
+                                onClick={handleSwapFalse}
+                                className="mt-1 -rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
+                            >
+                                Swap
+                            </button>
+                            <div className="flex justify-between border-[2px] border-white w-[80%] h-[100px] sm:h-[150px] bg-white">
+                                <div className="w-[49.5%] flex flex-col justify-between bg-white">
+                                    <div ref={dropdownRef1}className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
+                                        <div onClick={() => setDropdownVisible1(!dropdownVisible1)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 1 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
+                                            <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption1}</div>
+                                        </div>
+                                        <div onClick={() => handleServeClick(1)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
+                                            <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
+                                                Serve
+                                            </div>
+                                        </div>
+                                        {dropdownVisible1 && (
+                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                                {options.map((option, index) => (
+                                                    <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect1(option)}>
+                                                        {option}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div ref={dropdownRef2} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
+                                        <div onClick={() => setDropdownVisible2(!dropdownVisible2)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 2 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
+                                            <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption2}</div>
+                                        </div>
+                                        <div onClick={() => handleServeClick(2)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
+                                            <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
+                                                Serve
+                                            </div>
+                                        </div>
+                                        {dropdownVisible2 && (
+                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                                {options.map((option, index) => (
+                                                    <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect2(option)}>
+                                                        {option}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="w-[49.5%] flex flex-col justify-between bg-white">
+                                <div ref={dropdownRef3} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
+                                        <div onClick={() => handleServeClick(3)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
+                                            <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
+                                                Serve
+                                            </div>
+                                        </div>
+                                        <div onClick={() => setDropdownVisible3(!dropdownVisible3)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 3 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
+                                            <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption3}</div>
+                                        </div>
+                                        {dropdownVisible3 && (
+                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                                {options.map((option, index) => (
+                                                    <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect3(option)}>
+                                                        {option}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div ref={dropdownRef4} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
+                                        <div onClick={() => handleServeClick(4)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
+                                            <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
+                                                Serve
+                                            </div>
+                                        </div>
+                                        <div onClick={() => setDropdownVisible4(!dropdownVisible4)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 4 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
+                                            <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption4}</div>
+                                        </div>
+                                        {dropdownVisible4 && (
+                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                                {options.map((option, index) => (
+                                                    <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect4(option)}>
+                                                        {option}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                onClick={handleSwapTrue}
+                                className="mt-1 rotate-90 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
+                            >
+                                Swap
+                            </button>
+                        </div>
 
-                    <div className="mt-4 "></div>
+                    <div className=" "></div>
                     {
                         allScores.map((score, index) => (
                             <div key={index} className="mt-2 sm:mt-4 flex justify-center gap-4 items-center">
@@ -655,129 +531,36 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                             </div>
                         ))
                     }
-                    {gameStarted &&
-                        <div className="flex justify-center">
-                            <button
-                                onClick={handleSwap}
-                                className="mt-1 custom:mt-2 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-purple-600 text-templateWhite rounded hover:bg-purple-800 transition"
-                            >
-                                Swap
-                            </button>
-                        </div>
-                    }
-                    <div className={gameStarted ? "w-full mt-1 custom:mt-2 flex justify-center items-center" : "hidden"}>
-                        <div className="flex justify-between border-[2px] border-white w-[80%] h-[100px] sm:h-[150px] bg-white">
-                            <div className="w-[49.5%] flex flex-col justify-between bg-white">
-                                <div ref={dropdownRef1}className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
-                                    <div onClick={() => setDropdownVisible1(!dropdownVisible1)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 1 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
-                                        <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption1}</div>
-                                    </div>
-                                    <div onClick={() => handleServeClick(1)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
-                                        <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
-                                            Serve
-                                        </div>
-                                    </div>
-                                    {dropdownVisible1 && (
-                                        <div className="absolute mt-8 bg-white border border-gray-200">
-                                            {options.map((option, index) => (
-                                                <div key={index} className="cursor-pointer py-2 px-4 hover:bg-gray-100 text-black" onClick={() => handleOptionSelect1(option)}>
-                                                    {option}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                                <div ref={dropdownRef2} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
-                                    <div onClick={() => setDropdownVisible2(!dropdownVisible2)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 2 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
-                                        <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption2}</div>
-                                    </div>
-                                    <div onClick={() => handleServeClick(2)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
-                                        <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
-                                            Serve
-                                        </div>
-                                    </div>
-                                    {dropdownVisible2 && (
-                                        <div className="absolute mt-8 bg-white border border-gray-200">
-                                            {options.map((option, index) => (
-                                                <div key={index} className="cursor-pointer py-2 px-4 hover:bg-gray-100 text-black" onClick={() => handleOptionSelect2(option)}>
-                                                    {option}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="w-[49.5%] flex flex-col justify-between bg-white">
-                            <div ref={dropdownRef3} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
-                                    <div onClick={() => handleServeClick(3)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
-                                        <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
-                                            Serve
-                                        </div>
-                                    </div>
-                                    <div onClick={() => setDropdownVisible3(!dropdownVisible3)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 3 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
-                                        <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption3}</div>
-                                    </div>
-                                    {dropdownVisible3 && (
-                                        <div className="absolute mt-8 bg-white border border-gray-200">
-                                            {options.map((option, index) => (
-                                                <div key={index} className="cursor-pointer py-2 px-4 hover:bg-gray-100 text-black" onClick={() => handleOptionSelect3(option)}>
-                                                    {option}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                                <div ref={dropdownRef4} className="flex justify-center items-center h-[47px] sm:h-[72px] bg-white text-white font-normal">
-                                    <div onClick={() => handleServeClick(4)} className="flex-grow w-[20%] h-full bg-emerald-300 flex items-center justify-center">
-                                        <div className="transform rotate-90 origin-center text-white font-bold cursor-pointer text-[8px] custom:text-xs sm:text-base">
-                                            Serve
-                                        </div>
-                                    </div>
-                                    <div onClick={() => setDropdownVisible4(!dropdownVisible4)} className={`flex-grow flex justify-center items-center w-[80%] h-full ${activeServe === 4 ? 'bg-cyan-700' : 'bg-emerald-500'}`}>
-                                        <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption4}</div>
-                                    </div>
-                                    {dropdownVisible4 && (
-                                        <div className="absolute mt-8 bg-white border border-gray-200">
-                                            {options.map((option, index) => (
-                                                <div key={index} className="cursor-pointer py-2 px-4 hover:bg-gray-100 text-black" onClick={() => handleOptionSelect4(option)}>
-                                                    {option}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
-                    <div className="mt-4 flex flex-col items-center">
+                    <div className=" flex flex-col items-center">
                     {gameStarted && (
                         <div className="flex flex-col">
                             {/* <div>
                                 <span className="text-templatePaleYellow text-[6px] custom:text-xs sm:text-[16px] mr-1 custom:mr-2">Winner:</span>
                                 <select
-                                    onChange={(e) => {
-                                        const value = e.target.value as Organization;
-                                        handleSetWinner(value);
-                                    }}
-                                    className="p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-blue-500 text-templateWhite rounded hover:bg-blue-700 transition"
-                                    defaultValue=""
+                                onChange={(e) => {
+                                    const value = e.target.value as Organization;
+                                    handleSetWinner(value);
+                                }}
+                                className="p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-blue-500 text-templateWhite rounded hover:bg-blue-700 transition"
+                                defaultValue=""
                                 >
-                                    <option value="" disabled>Select winner</option>
-                                    {match.organization1 && (
-                                        <option value={match.organization1}>{"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}</option>
-                                    )}
-                                    {match.organization2 && (
-                                        <option value={match.organization2}>{"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}</option>
-                                    )}
+                                <option value="" disabled>Select winner</option>
+                                {match.organization1 && (
+                                    <option value={match.organization1}>{"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}</option>
+                                )}
+                                {match.organization2 && (
+                                    <option value={match.organization2}>{"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}</option>
+                                )}
                                 </select>
                             </div> */}
                             {/* <div className="flex justify-center gap-2">
                                 <button
-                                    onClick={handleSaveScore}
-                                    className="mt-4 sm:mt-6 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-blue-500 text-templateWhite rounded hover:bg-blue-700 transition"
+                                onClick={handleSaveScore}
+                                className="mt-4 sm:mt-6 p-[4px] custom:p-2 sm:p-3 text-[6px] custom:text-xs sm:text-[16px] bg-blue-500 text-templateWhite rounded hover:bg-blue-700 transition"
                                 >
-                                    Save score
+                                Save score
                                 </button>
                             </div> */}
                             <div className="flex justify-center gap-2">

@@ -13,7 +13,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
     const options = ["Men's Doubles", "Men's Singles", "Mixed Doubles"];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Men's Doubles");
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2024, 5, 4));
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2024, 5, 5));
     const [dataSchedule, setDataSchedule] = useState<Match[]>([]);
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [selectedSchedule, setSelectedSchedule] = useState<Match | null>(null);

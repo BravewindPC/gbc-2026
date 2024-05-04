@@ -91,7 +91,7 @@ export enum Organization {
     HMTM_PATRA = 'HMTM "PATRA"',
     IMA_G = "IMA-G",
     HMK_AMISCA = 'HMK "AMISCA"',
-    HMF = 'HMF "ARS PRAEPARANDI"',
+    HMF = 'HMF',
     HMRH = "HMRH",
     HMP_PL = "HMP PL",
     TPB_SITH_R = "SITH-R"

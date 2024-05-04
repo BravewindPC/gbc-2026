@@ -387,7 +387,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                             </div>
                                         </div>
                                         {dropdownVisible1 && (
-                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                            <div className="absolute z-10 mt-8 bg-white border border-gray-200">
                                                 {options.map((option, index) => (
                                                     <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect1(option)}>
                                                         {option}
@@ -406,7 +406,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                             </div>
                                         </div>
                                         {dropdownVisible2 && (
-                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                            <div className="absolute z-10 mt-8 bg-white border border-gray-200">
                                                 {options.map((option, index) => (
                                                     <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect2(option)}>
                                                         {option}
@@ -427,7 +427,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                             <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption3}</div>
                                         </div>
                                         {dropdownVisible3 && (
-                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                            <div className="absolute z-10 mt-8 bg-white border border-gray-200">
                                                 {options.map((option, index) => (
                                                     <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect3(option)}>
                                                         {option}
@@ -446,7 +446,7 @@ export const PopupAdmin = ({ onClose, match }: { onClose: () => void; match: Mat
                                             <div className="text-[8px] custom:text-xs sm:text-base cursor-pointer">{selectedOption4}</div>
                                         </div>
                                         {dropdownVisible4 && (
-                                            <div className="absolute mt-8 bg-white border border-gray-200">
+                                            <div className="absolute z-10 mt-8 bg-white border border-gray-200">
                                                 {options.map((option, index) => (
                                                     <div key={index} className="cursor-pointer py-1 custom:py-2 px-2 custom:px-4 hover:bg-gray-100 text-black text-xs custom:text-base" onClick={() => handleOptionSelect4(option)}>
                                                         {option}

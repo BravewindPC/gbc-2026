@@ -19,8 +19,6 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
         setSemifinals(semifinalMatches);
         setFinals(finalMatches);
     }, [data]);
-
-    console.log(quarterfinals,semifinals,finals)
     
     return (
         <div className=" ml-10 mr-10 flex h-[600px] justify-center">
@@ -35,7 +33,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                 <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                     {(() => {
-                                        const match = quarterfinals.find(match => match.number === 7);
+                                        const match = finals.find(match => match.number === 7);
                                         if (match && match.organization1) {
                                             return Organization[match.organization1 as keyof typeof Organization];
                                         } else {
@@ -44,7 +42,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                     })()}
                                 </div>
                                 {(() => {
-                                    const match = quarterfinals.find(match => match.number === 7);
+                                    const match = finals.find(match => match.number === 7);
                                     if (match?.score1 && match.score1.length > 0) {
                                         return (
                                             <>
@@ -74,7 +72,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                 <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                     {(() => {
-                                        const match = quarterfinals.find(match => match.number === 7);
+                                        const match = finals.find(match => match.number === 7);
                                         if (match && match.organization2) {
                                             return Organization[match.organization2 as keyof typeof Organization];
                                         } else {
@@ -83,7 +81,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                     })()}
                                 </div>
                                 {(() => {
-                                    const match = quarterfinals.find(match => match.number === 7);
+                                    const match = finals.find(match => match.number === 7);
                                     if (match?.score2 && match.score2.length > 0) {
                                         return (
                                             <>
@@ -124,7 +122,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                                         <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 5);
+                                                                const match = semifinals.find(match => match.number === 5);
                                                                 if (match && match.organization1) {
                                                                     return Organization[match.organization1 as keyof typeof Organization];
                                                                 } else {
@@ -133,7 +131,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         {(() => {
-                                                            const match = quarterfinals.find(match => match.number === 5);
+                                                            const match = semifinals.find(match => match.number === 5);
                                                             if (match?.score1 && match.score1.length > 0) {
                                                                 return (
                                                                     <>
@@ -163,7 +161,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                                         <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 5);
+                                                                const match = semifinals.find(match => match.number === 5);
                                                                 if (match && match.organization2) {
                                                                     return Organization[match.organization2 as keyof typeof Organization];
                                                                 } else {
@@ -172,7 +170,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         {(() => {
-                                                            const match = quarterfinals.find(match => match.number === 5);
+                                                            const match = semifinals.find(match => match.number === 5);
                                                             if (match?.score2 && match.score2.length > 0) {
                                                                 return (
                                                                     <>
@@ -385,7 +383,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                                         <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 6);
+                                                                const match = semifinals.find(match => match.number === 6);
                                                                 if (match && match.organization1) {
                                                                     return Organization[match.organization1 as keyof typeof Organization];
                                                                 } else {
@@ -394,7 +392,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         {(() => {
-                                                            const match = quarterfinals.find(match => match.number === 6);
+                                                            const match = semifinals.find(match => match.number === 6);
                                                             if (match?.score1 && match.score1.length > 0) {
                                                                 return (
                                                                     <>
@@ -424,7 +422,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
                                                         <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
                                                             {(() => {
-                                                                const match = quarterfinals.find(match => match.number === 6);
+                                                                const match = semifinals.find(match => match.number === 6);
                                                                 if (match && match.organization2) {
                                                                     return Organization[match.organization2 as keyof typeof Organization];
                                                                 } else {
@@ -433,7 +431,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         {(() => {
-                                                            const match = quarterfinals.find(match => match.number === 6);
+                                                            const match = semifinals.find(match => match.number === 6);
                                                             if (match?.score2 && match.score2.length > 0) {
                                                                 return (
                                                                     <>

@@ -20,8 +20,19 @@ const montserrat = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "GBC UBT 2024",
+  metadataBase: new URL('https://gbc-ubt-2024.vercel.app/'),
+  title: {
+    default: "GBC UBT 2024",
+    template: `%s | GBC UBT 2024`
+  },
+  description:"Turnamen Ganesha Badminton Championship 2024 yang diadakan oleh Unit Bulu Tangkis ITB",
   keywords: [
+    "gbc ubt",
+    "gbc ubt 2024",
+    "gbc ubt itb 2024",
+    "gbc ubt itb",
+    "gbc",
+    "ubt",
     "GBC UBT 2024",
     "Ganesha Badminton Championsip",
     "GBC",
@@ -29,6 +40,14 @@ export const metadata: Metadata = {
     "GBC 2024",
   ],
   manifest: "https://gbc-ubt-2024.vercel.app/manifest.webmanifest",
+  openGraph:{
+    title: "GBC UBT 2024",
+    description: "Turnamen Ganesha Badminton Championship 2024 yang diadakan oleh Unit Bulu Tangkis ITB",
+    type: "website",
+    locale: "en",
+    url: "https://gbc-ubt-2024.vercel.app/",
+    siteName: "GBC UBT 2024"
+  }
 };
 
 export default function RootLayout({

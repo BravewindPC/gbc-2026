@@ -1,6 +1,12 @@
 import { authOptions } from "@/lib/auth"
 import { getServerSession } from "next-auth"
 import Tournament from "../components/tournament"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Tournament",
+    description: "Jadwal Pertandingan Semua Sektor GBC UBT 2024"
+}
 
 const Page = async () => {
 

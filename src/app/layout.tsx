@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   manifest: "https://gbc-ubt-2024.vercel.app/manifest.webmanifest",
   openGraph:{
-    title: "GBC UBT 2024",
+    title: "GBC UBT 2024 by Unit Bulutangkis ITB",
     description: "Turnamen Ganesha Badminton Championship 2024 yang diadakan oleh Unit Bulu Tangkis ITB",
     type: "website",
     locale: "en",

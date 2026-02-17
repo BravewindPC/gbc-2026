@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
                     where: { name: credentials.username },
                 });
     
-                if (user && user.password) {
+                if (user && user.password && user.password == credentials.password) {
                     return user;
                 } else {
                     throw new Error('Invalid username or password');

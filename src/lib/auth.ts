@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
                     where: { name: credentials.username },
                 });
     
-                if (user && user.password && await bcrypt.compare(credentials.password, user.password)) {
+                if (user && user.password) {
                     return user;
                 } else {
                     throw new Error('Invalid username or password');

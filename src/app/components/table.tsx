@@ -25,6 +25,7 @@ const Table: React.FC<TableProps> = ({ type, data }) => {
         </thead>
         <tbody>
           {data?.members
+          .filter(team => team.matchResult !== null)
           .slice() 
           .sort((a, b) => {
             if (b.matchResult.points !== a.matchResult.points) {
